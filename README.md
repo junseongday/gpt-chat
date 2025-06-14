@@ -35,15 +35,6 @@ npm install
 npm run start
 ```
 
-3. 프론트엔드 접속
-index.html 파일을 브라우저에서 열어 사용하면 됩니다.
-
-CORS 문제를 피하기 위해 간단한 static 서버를 띄우는 것도 추천합니다:
-
-```bash
-npx serve .
-```
-
 💻 기술 스택
 Frontend: HTML, CSS, JavaScript (Vanilla)
 
