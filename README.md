@@ -42,6 +42,8 @@ Backend: Node.js, Express
 
 API: OpenAI GPT (Completion API)
 
+---
+
 🛡️ 보안
 API 키는 .env 파일을 통해 관리합니다.
 
