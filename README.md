@@ -4,7 +4,7 @@
 사용자가 입력한 메시지를 OpenAI에 보내고 응답을 받아 대화 형태로 출력합니다.
 
 ## 📁 프로젝트 구조
-
+```
 project-root/
 
 ├── public
@@ -14,7 +14,7 @@ project-root/
 ├── server.js # 백엔드 서버 (Node.js + Express)
 ├── .env # OpenAI API 키 보관 (gitignore에 포함)
 └── README.md
-
+```
 
 ## ⚙️ 설치 및 실행 방법
 
