@@ -34,15 +34,13 @@ const openai = new OpenAI({
 });
 
 app.post('/chat', async (req, res) => {
-  const { message } = req.body;
-
-  console.log(20, message);
+  const { messages } = req.body;
+  console.log(20, messages);
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: message }],
+    messages: messages,
   });
   console.log(30, response);
-
   res.json({ reply: response.choices[0].message.content });
 });
 

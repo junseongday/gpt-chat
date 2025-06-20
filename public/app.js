@@ -1,3 +1,5 @@
+let messages = [];
+
 const chatContent = document.getElementById('chat-content');
 const input = document.getElementById('input');
 const sendBtn = document.getElementById('send');
@@ -13,11 +15,14 @@ async function sendMessage() {
   chatContent.scrollTop = chatContent.scrollHeight;
   input.value = '';
 
+  // messages 배열에 user 메시지 추가
+  messages.push({ role: 'user', content: message });
+
   try {
     const res = await fetch('http://localhost:3000/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message })
+      body: JSON.stringify({ messages })
     });
     const data = await res.json();
 
@@ -26,6 +31,9 @@ async function sendMessage() {
       <div class="line"><span class="chat-box">${data.reply}</span></div>
     `);
     chatContent.scrollTop = chatContent.scrollHeight;
+
+    // messages 배열에 assistant 답변 추가
+    messages.push({ role: 'assistant', content: data.reply });
 
   } catch (e) {
     chatContent.insertAdjacentHTML('beforeend', `
